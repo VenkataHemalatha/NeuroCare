@@ -1,0 +1,22 @@
+name: NexOps Integration Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: NexOps test
+        run: |
+          echo "NexOps GitHub integration is working"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+
+      - name: Complete
+        run: echo "NexOps workflow completed successfully"
